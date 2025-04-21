@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ByteXL Buddy Program webpage</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // Create elements and build the DOM structure using JavaScript
+        const root = document.getElementById('root');
+
+        // Create a style string
+        const styleString = `margin: 0; padding: 0; box-sizing: border-box;`;
+
+        // Set the style attribute of the root element
+        root.setAttribute('style', styleString);
+        
+
+        // Create the navbar
+        const navbar = document.createElement('nav');
+        navbar.classList.add('navbar');
+        navbar.id = 'navbar';
+
+        
+        root.appendChild(navbar);
+
+        const navstylestring = 
+               `display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                color: white;
+                padding: 20px;
+                text-transform: uppercase;`;
+
+        navbar.setAttribute('style', navstylestring);
+
+
+        const logo = document.createElement('div');
+        logo.classList.add('logo');
+        logo.id = 'logo';
+        logo.textContent = 'Carzone';
+        const logostylestring=`font-size: 1.5rem;  font-weight: bold;`;
+        logo.setAttribute('style',logostylestring);
+
+        navbar.appendChild(logo);
+
+        
+
+const navLinks = document.createElement('ul');
+navLinks.classList.add('menu');
+navLinks.id = 'menu';
+
+navbar.appendChild(navLinks);
+
+navLinks.style.listStyleType = "none";
+        navLinks.style.padding = "0";
+        navLinks.style.display = "flex";
+        navLinks.style.gap = "20px";
+        const navItems = ['HOME', 'SERVICE', 'FEATURED CARS', 'NEW CARS', 'CONTACT'];
+        navItems.forEach(item => {
+            const li = document.createElement('li');
+            li.style.display = "inline";
+            const a = document.createElement('a');
+            a.href = '#';
+            a.textContent = item;
+            a.style.color = "white";
+            a.style.textDecoration = "none";
+            a.style.fontSize = "18px";
+            a.onmouseover = () => a.style.textDecoration = "underline";
+            a.onmouseout = () => a.style.textDecoration = "none";
+            li.appendChild(a);
+            navLinks.appendChild(li);
+        });
+        navbar.appendChild(navLinks);
+
+
+
+
+
+// Create the hero section
+const heroSection = document.createElement('div');
+heroSection.classList.add('hero-section');
+heroSection.id = 'heroSection';
+
+root.appendChild(heroSection);
+
+const heroContent = document.createElement('div');
+heroContent.classList.add('hero-content');
+heroContent.id = 'heroContent'; 
+
+heroSection.appendChild(heroContent);
+
+
+const mainHeading = document.createElement('h1');
+mainHeading.id = 'mainHeading';
+mainHeading.textContent = 'GET YOUR ';
+
+
+const mainHeadingstylestring=`font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 16px;`;
+
+mainHeading.setAttribute('style',mainHeadingstylestring);
+
+heroContent.appendChild(mainHeading);
+
+const dreamCarSpan = document.createElement('span');
+dreamCarSpan.classList.add('highlight');
+dreamCarSpan.id = 'dreamCar';
+dreamCarSpan.textContent = 'DREAM CAR';
+
+mainHeading.appendChild(dreamCarSpan);
+dreamCarSpanstylestring=`color: rgb(243, 202, 134);`;
+dreamCarSpan.setAttribute('style',dreamCarSpanstylestring);
+
+const atSpan = document.createTextNode(' AT A ');
+mainHeading.appendChild(atSpan);
+
+
+
+const dreamPriceSpan = document.createElement('span');
+dreamPriceSpan.classList.add('highlight');
+dreamPriceSpan.id = 'dreamPrice';
+dreamPriceSpan.textContent = 'DREAM PRICE';
+
+mainHeading.appendChild(dreamPriceSpan);
+
+const dreamPriceSpanstylestring=`color:rgb(255, 102, 196);`;
+dreamPriceSpan.setAttribute('style',dreamPriceSpanstylestring);
+
+const subHeading = document.createElement('h2');
+subHeading.id = 'subHeading';
+subHeading.textContent = 'The largest inventory of cars in Northern India';
+
+heroContent.appendChild(subHeading);
+
+const subHeadingstylestring=`
+font-size: 2rem;
+  margin-bottom: 20px;`;
+
+subHeading.setAttribute('style',subHeadingstylestring);
+
+const contactButton = document.createElement('button');
+contactButton.classList.add('contact-btn');
+contactButton.id = 'contactButton';
+contactButton.textContent = 'Contact Us';
+
+heroContent.appendChild(contactButton);
+
+const contactstylestring = 
+  `padding: 20px 40px;
+   background: linear-gradient(to right, #b42687, #fa2d34);
+   color: white;
+   border: none;
+   border-radius: 32px;
+   font-size: 1.5rem;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   text-transform: uppercase;
+   margin-top: 120px;`;
+
+contactButton.setAttribute('style', contactstylestring);
+
+
+/*style for herosection*/
+const herosectionstylestring = 
+  `background: url("./assets/limecar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;`;
+
+heroSection.setAttribute('style', herosectionstylestring);
+
+
+/*style for herocontent*/
+const herocontentstring=`width: 100%;`;
+herocontent.setAttribute('style',herocontentstring);
+
+
+
+
+
+</script>
+</body>
+</html>
